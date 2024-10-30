@@ -1,0 +1,170 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Risco - Seu Aliado Financeiro</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="gestao-de-risco.css">
+</head>
+
+<body>
+    <div class="parallax">
+        <div class="hero-text">
+            <h1>Gestão de Risco</h1>
+            <p>Aprenda a proteger seus investimentos e otimizar seus retornos</p>
+        </div>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="#introducao">Introdução</a></li>
+            <li><a href="#tipos-de-risco">Tipos de Risco</a></li>
+            <li><a href="#estrategias">Estratégias</a></li>
+            <li><a href="#ferramentas">Ferramentas</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="introducao">
+            <h2>Introdução à Gestão de Risco</h2>
+            <p>A gestão de risco é um componente crucial para o sucesso nos investimentos. Ela envolve a identificação,
+                avaliação e priorização dos riscos, seguidas pela aplicação coordenada de recursos para minimizar,
+                monitorar e controlar a probabilidade ou o impacto de eventos indesejados.</p>
+            <p>Neste curso, você aprenderá os fundamentos da gestão de risco e como aplicá-los em sua estratégia de
+                investimentos.</p>
+        </section>
+
+        <section id="tipos-de-risco">
+            <h2>Tipos de Risco</h2>
+            <div class="risk-types">
+                <div class="risk-type">
+                    <h3>Risco de Mercado</h3>
+                    <p>Relacionado às flutuações nos preços dos ativos devido a fatores econômicos e de mercado.</p>
+                </div>
+                <div class="risk-type">
+                    <h3>Risco de Crédito</h3>
+                    <p>Associado à possibilidade de inadimplência por parte do emissor de um título ou contraparte.</p>
+                </div>
+                <div class="risk-type">
+                    <h3>Risco de Liquidez</h3>
+                    <p>Refere-se à dificuldade de vender um ativo rapidamente sem causar uma queda significativa em seu
+                        preço.</p>
+                </div>
+                <div class="risk-type">
+                    <h3>Risco Operacional</h3>
+                    <p>Relacionado a falhas em processos internos, pessoas e sistemas, ou eventos externos.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="estrategias">
+            <h2>Estratégias de Gestão de Risco</h2>
+            <ul>
+                <li>Diversificação de portfólio</li>
+                <li>Hedging</li>
+                <li>Stop-loss e take-profit</li>
+                <li>Análise de cenários e testes de estresse</li>
+                <li>Monitoramento constante e reavaliação</li>
+            </ul>
+            <p>Cada uma dessas estratégias será detalhada ao longo do curso, com exemplos práticos e exercícios para
+                fixação.</p>
+        </section>
+
+        <section id="ferramentas">
+            <h2>Ferramentas de Gestão de Risco</h2>
+            <p>Existem diversas ferramentas que podem auxiliar na gestão de risco. Algumas das mais importantes são:</p>
+            <ul>
+                <li>Value at Risk (VaR)</li>
+                <li>Beta e Alfa</li>
+                <li>Índice de Sharpe</li>
+                <li>Análise de correlação</li>
+            </ul>
+            <div class="chart-container">
+                <canvas id="riskReturnChart"></canvas>
+            </div>
+        </section>
+
+        <section>
+            <h2>Próximos Passos</h2>
+            <p>Agora que você tem uma visão geral da gestão de risco, está pronto para mergulhar mais fundo em cada um
+                desses tópicos. Nosso curso completo oferece:</p>
+            <ul>
+                <li>10 aulas em vídeo</li>
+                <li>Materiais de leitura complementares</li>
+                <li>Exercícios práticos</li>
+                <li>Fórum de discussão com outros alunos e instrutores</li>
+            </ul>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Seu Aliado Financeiro. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Gráfico de Risco vs Retorno
+        const ctx = document.getElementById('riskReturnChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'Ativos',
+                    data: [
+                        { x: 5, y: 8 },
+                        { x: 3, y: 5 },
+                        { x: 7, y: 9 },
+                        { x: 2, y: 4 },
+                        { x: 6, y: 7 }
+                    ],
+                    backgroundColor: 'rgba(75, 192, 192, 0.6)'
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Risco'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Retorno'
+                        }
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Relação Risco x Retorno'
+                    }
+                }
+            }
+        });
+
+        // Animação de entrada para seções
+        const sections = document.querySelectorAll('section');
+        const options = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>

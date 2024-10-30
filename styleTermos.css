@@ -1,0 +1,59 @@
+/* stylet.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    background-image: url("https://i.pinimg.com/originals/38/f7/a9/38f7a9781e045ec758f5a1811e053df7.jpg");
+}
+
+.container {
+    background-color: #ffe6e6; /* Rosa claro */
+    padding: 20px;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 20px 0;
+}
+
+#voltar {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff5c5c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#voltar:hover {
+    background-color: #e04a4a;
+}

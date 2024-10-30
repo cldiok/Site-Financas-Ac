@@ -1,0 +1,150 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução aos Investimentos - Seu Aliado Financeiro</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="introduçao.css">
+</head>
+
+<body>
+    <header>
+        <h1>Introdução aos Investimentos</h1>
+    </header>
+
+    <main>
+        <section id="investimentos" class="course-section">
+            <div class="article-meta">
+                <p>Publicado em: 29 de Setembro de 2024 | Autor: Grupo 3.</p>
+            </div>
+
+            <p>Bem-vindo ao mundo dos investimentos! Se você está dando os primeiros passos nessa jornada financeira,
+                este artigo é para você. Vamos explorar os conceitos básicos e os diferentes tipos de investimentos
+                disponíveis no mercado.</p>
+
+            <h2>O que são investimentos?</h2>
+            <p>Investimentos são aplicações de recursos (geralmente dinheiro) com o objetivo de obter ganhos futuros.
+                Diferente da poupança simples, os investimentos buscam fazer o seu dinheiro crescer de forma mais
+                eficiente, superando a inflação e gerando riqueza ao longo do tempo.</p>
+
+            <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                alt="Gráficos e calculadora representando investimentos" width="700" height="450">
+
+            <h2>Por que investir?</h2>
+            <p>Existem várias razões para começar a investir:</p>
+            <ul>
+                <li>Construir um patrimônio para o futuro</li>
+                <li>Alcançar objetivos financeiros específicos (como comprar uma casa ou se aposentar)</li>
+                <li>Proteger seu dinheiro contra a inflação</li>
+                <li>Diversificar suas fontes de renda</li>
+            </ul>
+            <h2>Conceitos básicos de investimentos</h2>
+            <p>Antes de mergulhar nos tipos de investimentos, é importante entender alguns conceitos fundamentais:</p>
+        </section>
+
+        <section id="Risco" class="course-section">
+            <h3>1. Risco x Retorno</h3>
+            <p>Em geral, quanto maior o potencial de retorno de um investimento, maior o risco associado. É crucial
+                encontrar um equilíbrio que se adeque ao seu perfil de investidor.</p>
+
+            <div id="risk-return-chart"></div>
+
+            <h3>2. Diversificação</h3>
+            <p>Não coloque todos os ovos na mesma cesta. Diversificar seus investimentos ajuda a reduzir riscos e pode
+                melhorar seus retornos no longo prazo.</p>
+
+            <h3>3. Liquidez</h3>
+            <p>É a facilidade com que você pode converter seu investimento em dinheiro. Alguns investimentos são mais
+                líquidos que outros.</p>
+        </section>
+
+        <section id="tipos-de-investimentos" class="course-section">
+            <h2>Tipos de Investimentos</h2>
+            <p>Existem diversos tipos de investimentos disponíveis no mercado. Vamos explorar alguns dos mais comuns:
+            </p>
+
+            <div class="investment-types">
+                <div class="investment-type">
+                    <h3>Renda Fixa</h3>
+                    <p>Investimentos com retorno previsível, como títulos do governo, CDBs e LCIs.</p>
+                </div>
+                <div class="investment-type">
+                    <h3>Renda Variável</h3>
+                    <p>Investimentos cujo retorno pode variar, como ações e fundos de investimento.</p>
+                </div>
+                <div class="investment-type">
+                    <h3>Imóveis</h3>
+                    <p>Investimento em propriedades para valorização ou aluguel.</p>
+                </div>
+                <div class="investment-type">
+                    <h3>Fundos de Investimento</h3>
+                    <p>Aplicações que reúnem recursos de vários investidores para investir em diversos ativos.</p>
+                </div>
+                <div class="investment-type">
+                    <h3>Criptomoedas</h3>
+                    <p>Moedas digitais como Bitcoin e Ethereum, consideradas investimentos de alto risco.</p>
+                </div>
+                <div class="investment-type">
+                    <h3>Tesouro Direto</h3>
+                    <p>Títulos públicos emitidos pelo governo federal, considerados de baixo risco.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="como-começar" class="course-section">
+            <h2>Como começar a investir?</h2>
+            <p>Começar a investir pode parecer intimidante, mas não precisa ser. Aqui estão algumas dicas para iniciar
+                sua jornada:</p>
+            <ol>
+                <li>Defina seus objetivos financeiros</li>
+                <li>Entenda seu perfil de investidor (conservador, moderado ou arrojado)</li>
+                <li>Comece com investimentos mais simples e de menor risco</li>
+                <li>Estude e aprenda constantemente sobre o mercado financeiro</li>
+                <li>Considere buscar orientação de um consultor financeiro</li>
+            </ol>
+
+            <p>Lembre-se: o mais importante é começar. Mesmo pequenos investimentos podem fazer uma grande diferença no
+                longo prazo.</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Seu Aliado Financeiro. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Gráfico de Risco x Retorno
+        var trace = {
+            x: [1, 2, 3, 4, 5],
+            y: [2, 4, 5, 7, 9],
+            mode: 'markers+text',
+            type: 'scatter',
+            name: 'Risco x Retorno',
+            text: ['Poupança', 'Tesouro Direto', 'Fundos', 'Ações', 'Criptomoedas'],
+            textposition: 'top center',
+            textfont: {
+                family: 'Raleway, sans-serif'
+            },
+            marker: { size: 12 }
+        };
+
+        var data = [trace];
+
+        var layout = {
+            title: 'Relação Risco x Retorno',
+            xaxis: {
+                title: 'Risco',
+                showgrid: false,
+                zeroline: false
+            },
+            yaxis: {
+                title: 'Retorno Potencial',
+                showline: false
+            }
+        };
+
+        Plotly.newPlot('risk-return-chart', data, layout);
+    </script>
+</body>
+
+</html>

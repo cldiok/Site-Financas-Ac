@@ -1,0 +1,288 @@
+<html lang="pt-br">
+
+</html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise Técnica - Seu Aliado Financeiro</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="analise-tecnica.css">
+</head>
+
+<body>
+    <div class="parallax">
+        <div class="hero-text">
+            <h1>Análise Técnica</h1>
+            <p>Aprenda Padrões de Preço e Volume do mercado</p>
+        </div>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="#introducao">Introdução</a></li>
+            <li><a href="#conceitos-basicos">Conceitos Básicos</a></li>
+            <li><a href="#padroes-graficos">Padrões Gráficos</a></li>
+            <li><a href="#indicadores">Indicadores</a></li>
+            <li><a href="#pratica">Prática</a></li>
+            <li><a href="#quiz">Quiz</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="introducao" class="section fade-in">
+            <h2>Introdução à Análise Técnica</h2>
+            <p>A análise técnica é um método de avaliação de ativos financeiros que se baseia no estudo dos padrões de
+                preço e volume no mercado. Este curso irá guiá-lo pelos fundamentos da análise técnica, ajudando você a
+                tomar decisões de investimento mais informadas.</p>
+        </section>
+
+        <section id="conceitos-basicos" class="section fade-in">
+            <h2>Conceitos Básicos</h2>
+            <p>Antes de mergulharmos nos padrões gráficos e indicadores, é importante entender os conceitos fundamentais
+                da análise técnica:</p>
+            <ul>
+                <li>Tendências (alta, baixa e laterais)</li>
+                <li>Suporte e resistência</li>
+                <li>Volume de negociação</li>
+                <li>Timeframes</li>
+            </ul>
+        </section>
+
+        <section id="padroes-graficos" class="section fade-in">
+            <h2>Padrões Gráficos</h2>
+            <p>Os padrões gráficos são formações visuais que aparecem nos gráficos de preços e podem indicar possíveis
+                movimentos futuros. Alguns padrões comuns incluem:</p>
+            <ul>
+                <li>Ombro-Cabeça-Ombro</li>
+                <li>Triângulos (ascendentes, descendentes e simétricos)</li>
+                <li>Bandeiras e flâmulas</li>
+                <li>Candles (Doji, Martelo, Estrela Cadente)</li>
+            </ul>
+            <div class="chart-container">
+                <canvas id="patternsChart"></canvas>
+            </div>
+        </section>
+
+        <section id="indicadores" class="section fade-in">
+            <h2>Indicadores Técnicos</h2>
+            <p>Os indicadores técnicos são fórmulas matemáticas aplicadas aos dados de preço e volume para fornecer
+                insights adicionais. Alguns indicadores populares são:</p>
+            <ul>
+                <li>Médias Móveis</li>
+                <li>RSI (Índice de Força Relativa)</li>
+                <li>MACD (Convergência e Divergência de Médias Móveis)</li>
+                <li>Bandas de Bollinger</li>
+            </ul>
+            <div class="chart-container">
+                <canvas id="indicatorsChart"></canvas>
+            </div>
+        </section>
+
+        <section id="pratica" class="section fade-in">
+            <h2>Prática Interativa</h2>
+            <p>Vamos aplicar o que aprendemos em um gráfico interativo. Use os controles abaixo para adicionar
+                diferentes indicadores e analisar o gráfico.</p>
+            <div class="interactive-chart">
+                <canvas id="interactiveChart"></canvas>
+                <div class="chart-controls">
+                    <button id="addMA">Adicionar Média Móvel</button>
+                    <button id="addRSI">Adicionar RSI</button>
+                    <button id="addMACD">Adicionar MACD</button>
+                    <button id="reset">Resetar</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz" class="section fade-in">
+            <h2>Quiz de Análise Técnica</h2>
+            <div class="quiz-container">
+                <div class="quiz-question">
+                    1. Qual padrão gráfico é frequentemente considerado um sinal de reversão de tendência?
+                </div>
+                <ul class="quiz-options">
+                    <li>
+                        <input type="radio" id="q1a" name="q1" value="a">
+                        <label for="q1a">Triângulo Simétrico</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="q1b" name="q1" value="b">
+                        <label for="q1b">Ombro-Cabeça-Ombro</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="q1c" name="q1" value="c">
+                        <label for="q1c">Bandeira</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="q1d" name="q1" value="d">
+                        <label for="q1d">Doji</label>
+                    </li>
+                </ul>
+                <button class="quiz-submit" onclick="checkAnswer()">Enviar Resposta</button>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Função para criar gráfico de padrões
+        function createPatternsChart() {
+            const ctx = document.getElementById('patternsChart').getContext('2d');
+            const chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+                    datasets: [{
+                        label: 'Preço',
+                        data: [50, 55, 60, 58, 62, 65, 60, 58, 55, 53, 57, 60],
+                        borderColor: 'rgb(75, 192, 192)',
+                        tension: 0.1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Exemplo de Padrão Ombro-Cabeça-Ombro'
+                        }
+                    }
+                }
+            });
+        }
+
+        // Função para criar gráfico de indicadores
+        function createIndicatorsChart() {
+            const ctx = document.getElementById('indicatorsChart').getContext('2d');
+            const chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+                    datasets: [{
+                        label: 'Preço',
+                        data: [50, 52, 55, 57, 56, 54, 53, 55, 58, 60, 62, 65],
+                        borderColor: 'rgb(75, 192, 192)',
+                        tension: 0.1
+                    }, {
+                        label: 'Média Móvel',
+                        data: [null, null, null, 53.5, 55, 55.5, 55, 54.5, 55, 56.5, 58.75, 61.25],
+                        borderColor: 'rgb(255, 99, 132)',
+                        tension: 0.1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Exemplo de Indicador: Média Móvel'
+                        }
+                    }
+                }
+            });
+        }
+
+        // Função para criar gráfico interativo
+        function createInteractiveChart() {
+            const ctx = document.getElementById('interactiveChart').getContext('2d');
+            const chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+                    datasets: [{
+                        label: 'Preço',
+                        data: [50, 52, 55, 57, 56, 54, 53, 55, 58, 60, 62, 65],
+                        borderColor: 'rgb(75, 192, 192)',
+                        tension: 0.1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Gráfico Interativo'
+                        }
+                    }
+                }
+            });
+
+            // Adicionar eventos aos botões
+            document.getElementById('addMA').addEventListener('click', () => {
+                chart.data.datasets.push({
+                    label: 'Média Móvel',
+                    data: [null, null, null, 53.5, 55, 55.5, 55, 54.5, 55, 56.5, 58.75, 61.25],
+                    borderColor: 'rgb(255, 99, 132)',
+                    tension: 0.1
+                });
+                chart.update();
+            });
+
+            document.getElementById('addRSI').addEventListener('click', () => {
+                chart.data.datasets.push({
+                    label: 'RSI',
+                    data: [50, 60, 70, 65, 55, 45, 40, 50, 60, 70, 75, 70],
+                    borderColor: 'rgb(54, 162, 235)',
+                    tension: 0.1
+                });
+                chart.update();
+            });
+
+            document.getElementById('addMACD').addEventListener('click', () => {
+                chart.data.datasets.push({
+                    label: 'MACD',
+                    data: [0, 0.5, 1, 1.5, 1, 0.5, 0, -0.5, -1, -0.5, 0, 0.5],
+                    borderColor: 'rgb(255, 206, 86)',
+                    tension: 0.1
+                });
+                chart.update();
+            });
+
+            document.getElementById('reset').addEventListener('click', () => {
+                chart.data.datasets = [{
+                    label: 'Preço',
+                    data: [50, 52, 55, 57, 56, 54, 53, 55, 58, 60, 62, 65],
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }];
+                chart.update();
+            });
+        }
+
+        // Função para verificar resposta do quiz
+        function checkAnswer() {
+            const selectedAnswer = document.querySelector('input[name="q1"]:checked');
+            if (selectedAnswer) {
+                if (selectedAnswer.value === 'b') {
+                    alert('Correto! O padrão Ombro-Cabeça-Ombro é frequentemente considerado um sinal de reversão de tendência.');
+                } else {
+                    alert('Incorreto. Tente novamente!');
+                }
+            } else {
+                alert('Por favor, selecione uma resposta.');
+            }
+        }
+
+        // Inicializar gráficos quando a página carregar
+        document.addEventListener('DOMContentLoaded', () => {
+            createPatternsChart();
+            createIndicatorsChart();
+            createInteractiveChart();
+        });
+
+        // Animação de fade-in para as seções
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Faz a altura ocupar toda a tela */
+    margin: 0; /* Remove margem padrão do body */
+    background-color: rgb(236, 236, 236); /* Cor de fundo para a página */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
+    url('https://i.pinimg.com/originals/b3/a3/98/b3a398c78eca155cac70ee37edf9e86b.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.container {
+    width: 100%; /* Largura do contêiner */
+    max-width: 300px; /* Limite máximo de largura */
+    background-color: rgb(186, 195, 195);
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra */
+    text-align: center;
+}

@@ -1,0 +1,81 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Faz a altura ocupar toda a tela */
+    margin: 0; /* Remove margem padrão do body */
+    background-color: rgb(236, 236, 236); /* Cor de fundo para a página */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
+    url('https://i.pinimg.com/originals/b3/a3/98/b3a398c78eca155cac70ee37edf9e86b.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.container {
+    background: rgb(252, 252, 252);
+    background-color: rgb(186, 195, 195);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgb(0, 0, 0);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex; /* Usar flexbox */
+    flex-direction: column; /* Permitir que os filhos se empilhem verticalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    width: 100%;
+    max-width: 400px; /* Limitar a largura máxima */
+}
+
+
+.centralizada {
+    width: 50%;
+    margin: 0 auto;
+    background-color: rgba(66, 149, 177, 0.677);
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 300px;
+}
+#buttom {
+        background-color: rgba(66, 149, 177, 0.652); /* Cor de fundo */
+        color: white; /* Cor do texto */
+        border: none; /* Sem borda */
+        border-radius: 5px; /* Bordas arredondadas */
+        padding: 10px 20px; /* Espaçamento interno */
+        font-size: 14px; /* Tamanho da fonte */
+        cursor: pointer; /* Cursor muda para indicar que é clicável */
+        transition: background-color 0.3s; /* Transição suave para a mudança de cor */
+        margin-top: 10px; /* Margem acima do botão */
+        width: 100%; /* Ocupa toda a largura do container */
+    }
+    
+#buttom:hover {
+    background-color: #357ebd; /* Cor ao passar o mouse */
+}
+.box {
+    background-color: rgb(216, 223, 224);
+}
+#cor {
+    color: rgb(56, 56, 56);
+}
+#senha {
+    text-align: center;
+}
+#email {
+    text-align: center;
+}
+#nome {
+    text-align: center;
+}
+#confirmPassword {
+    text-align: center;
+}
+#titulo {
+    font-size: 45px;
+}
